@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="en">
+    <link rel="shortcut icon" href="/icon.ico" />
+    <meta name="title" content="Create a chart, graph chart, line chart, area chart tool">
+    <meta name="description" content="A tool to create a charts, graph charts, line chart, 
+    area charts, pie charts maker. Save as pictures or embed in your blog">
+    <meta name="keywords" content="charts, create chart, pie chart, bar chart, graph and charts, bar graph, line graph, area chart">
+    <meta name="author" content="aChartBuilder">
+    <meta property="og:site_name" content="achartbuilder.com">
+    <meta property="og:description" content="A tool to create a charts, graph charts, line chart, 
+    area charts, pie charts maker. Save as pictures or embed in your blog">
+    <meta property="og:url" content="https://achartbuilder.com/">
+    <meta property="og:title" content="Create a chart, graph chart, line chart, area chart tool">
+    <meta property="og:image" content="/images/icon.png">
+    <meta name ="robots" content="index">
+    	<!-- blueprint CSS framework -->
+	<title>aChartBuilder - Create a chart | graph chart | line chart | area chart | pie chart tool</title>
+    <link rel="stylesheet" type="text/css" href="./css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/all.min.css">
+
+<link rel="stylesheet" type="text/css" href="./css/Chart.min.css">
+<link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
+    <script src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./js/notify.min.js"></script>
+<script type="text/javascript" src="./js/canvas2image.js"></script>
+</head>
+
+<body>
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Welcome to aChartBuilder
+            </h1>
+            <h2 class="subtitle">
+                a Free Online Chart Builder
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+
+        <div class="container" id="page">
+
+            <div id="content">
+
+                <h1 class="title">Free online chart builder</h1>
+
+                <p>With <b>aChartBuilder</b> you can create bar, pie, line, area and many more charts.</p>
+
+                <p>Lets get started creating your charts.
+                    <a href="/site/register">Create an Account </a> to access more features.
+                </p>
+
+                <br>
+                <div class="notification is-primary">
+                    <button class="delete"></button>
+                    <i class="fa fa-exclamation-triangle"></i> Press CTRL + S to quickly build your chart
+                </div>
+
+                <hr>
+
+                <h2 class="title"><i style="color:darkgreen" class="fa fa-check"></i>&nbsp;<span style="color:grey">STEP 1:</span> Give your chart a name</h2>
+                <p>Change the chart title; Give the X and Y axis labels and more</p>
+                <div class="app">
+
+                    <div style="min-height: 70px; border: 1px solid #ccc; margin-bottom: 5px; padding: 5px">
+                        <div style="display: inline-block" class="form">
+                            Chart Title: <input id="chart-title" type="text" value="My Chart" size="10"/>
+                        </div>
+                        <div style="display: inline-block">
+                            Chart Type: <select id="chart-type">
+                            <option title="Vertical bar" value="bar">Vertical Bar</option>
+                            <option title="horizontal bar" value="horizontalBar">Horizontal Bar</option>
+                            <option title="horizontal bar" value="stackedBar">Stacked Bar</option>
+                            <option title="Line Chart" value="line">Line</option>
+                            <option value="pie">Pie</option>
+                            <option value="polarArea">Polar Area</option>
+                            <option value="doughnut">Doughnut</option>
+                            <option value="radar">Radar</option>
+                        </select>
+                        </div>
+                        <div style="display: inline-block">
+                            Chart Width: <input  id="chart-width" type="text" value="800" size="5"/>
+                        </div>
+                        <div style="display: inline-block">
+                            Chart Height: <input id="chart-height" type="text" value="450" size="5"/>
+                        </div>
+                        <br>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            Show x-axis Label: <select id="show-x-axis">
+                            <option title="Show" value="yes">Yes</option>
+                            <option title="Do not show" value="no" selected>No</option>
+                        </select>
+                        </div>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            x-axis Label: <input id="x-axis-label" type="text" value="My X axis" size="5"/>
+                        </div>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            Show y-axis Label: <select id="show-y-axis">
+                            <option title="Show" value="yes">Yes</option>
+                            <option title="Do not show" value="no" selected>No</option>
+                        </select>
+                        </div>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            y-axis Label: <input id="y-axis-label" type="text" value="My y axis" size="5"/>
+                        </div>
+                        <br>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            Show x-axis: <select id="show-x-axis-values">
+                            <option title="Show" value="yes" selected>Yes</option>
+                            <option title="Do not show" value="no">No</option>
+                        </select>
+                        </div>
+                        <div style="display: inline-block; margin-top: 3px;">
+                            Show y-axis: <select id="show-y-axis-values">
+                            <option title="Show" value="yes" selected>Yes</option>
+                            <option title="Do not show" value="no">No</option>
+                        </select>
+                        </div>
+                    </div>
+                    <br>
+
+
+                    <h2 class="title"><i style="color:darkgreen" class="fa fa-check"></i>
+                        <span style="color:grey">STEP 2:</span> Add your labels for the x-Axis</h2>
+                    <div style="display: inline-block">
+                        Source Actions: <button class="source-add-commas" data-source="labels">Add Commas</button> (Can help in formatting your data)
+                    </div>
+                    <div style="min-height: 70px; border: 1px solid #ccc; margin-top:3px; margin-bottom: 5px; padding: 5px">
+                        <div style="display: inline-block">
+                            <textarea class="textarea" id="labels" cols="100" rows="5">Red,Blue,Yellow,Green,Purple,Orange</textarea>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h2 class="title"><i style="color:darkgreen" class="fa fa-check"></i>
+                        <span style="color:grey">STEP THREE:</span>
+                        Add a datasource <i class="fa fa-arrow-right"></i>&nbsp;&nbsp;
+                        <button id="add-source">Add New Datasource</button>
+                    </h2>
+
+                    <div class="notification is-info">
+                        <button class="delete"></button>
+                        <i class="fa fa-exclamation-triangle"></i>
+                        You can change the color scheme and fill options below. Press the <b>build chart</b> button to show chart.</p>
+
+                    </div>
+
+                    <div style="display: inline-block">
+                        Color Scheme <i class="fa fa-question-circle"></i>: <select id="ds_colorscheme">
+                        <option title="The default color scheme" value="default">Default</option>
+                        <option title="A grey color scheme" value="grey">Grey</option>
+                        <option title="A dark color scheme" value="dark">Dark</option>
+                        <option title="Transparent default colors" value="defaultTransparent">Default(Transparent)</option>
+                    </select>
+                    </div>
+                    <div style="display: inline-block">
+                        Data Source Fill: <select id="ds_fill">
+                        <option title="Show fill" value="yes">Yes</option>
+                        <option title="Do not show fill" value="no">No</option>
+                    </select>
+                    </div>
+                    <div style="display: inline-block">
+                        X Axis Type: <select id="ds_type">
+                        <option title="Format for numbers" value="numbers">Numbers</option>
+                        <option title="Format for money" value="money">Money</option>
+                    </select>
+                    </div>
+                    <div id="datasources">
+
+                    </div>
+
+
+                    <div style="margin-top: 15px; margin-bottom: 5px;">
+                        <h2><i style="color:darkgreen" class="fa fa-check"></i>
+                            <span style="color:grey">STEP FOUR:</span> Build your chart (download or print) - Press (CTRL + S)
+                        </h2>
+                        <button id="build"><i class="fa fa-toolbox"></i> Build Chart</button>
+                        <button id="print"><i class="fa fa-print"></i> Print Chart</button>
+                        <button id="save-picture"><i class="fa fa-image"></i> Save as Picture</button>
+                    </div>
+
+                    <br>
+
+                    <p>Chart Preview</p>
+                    <div class="flash-notice">
+                        <p title="a tip"><i class="fa fa-exclamation-triangle"></i> Press CTRL + S to quickly build your chart</p>
+                    </div>
+                    <div id="content-space" style="min-height:300px; max-height:500px; overflow: scroll; border: 1px solid #ccc">
+                        <canvas id="myChart" width="800" height="450"></canvas>
+                    </div>
+                    <div id="settings" data-ref="" data-id="" data-settings=''></div>
+
+                </div>
+
+                <div id="dialog" title="Save your Chart" style="display: none;">
+                    <p>Save your picture Here</p>
+                    <div style="margin-top: 3px;">
+                        <div style="display: inline-block">
+                            Image Name: <input id="filename" type="text" value=""/>
+                        </div><br><br>
+                        <div style="display: inline-block">
+                            File Type: <select id="filetype">
+                            <option value="png">PNG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="gif">GIF</option>
+                            <option value="bmp">BMP</option>
+                        </select>
+                        </div>
+                        <br><br>
+                        <div style="display: inline-block">
+                            Background Color: <select id="bg_color">
+                            <option value="#ffffff">White</option>
+                            <option value="#000000">Black</option>
+                            <option value="#DCDCDC">Grey</option>
+                            <option value="#FFFACD">Lemon</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="embed-dialog" title="Embed your chart" style="display: none;">
+                    <p>Copy and paste this content to your websites</p>
+                    <textarea id="embed-element" style="width:100%" rows="5"></textarea>
+                </div>
+            </div><!-- content -->
+
+            <div class="clear"></div>
+
+            <div id="footer">
+                Copyright &copy; 2020 by achartbuilder.com<br/>
+                All Rights Reserved.<br/>
+                Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>. &amp; <a rel="external" href="https://www.chartjs.org/">Chart.js</a>
+            </div><!-- footer -->
+
+        </div><!-- page -->
+
+        <script type="text/javascript" src="./js/chart_builder.js?v=1.0.2"></script>
+        <script type="text/javascript" src="./js/resources.js?v=1.0.2"></script>
+        <script type="text/javascript" src="./js/builder.js?v=1.0.2"></script>
+
+
+</div>
+
+</section>
+
+</body>
+</html>
+
